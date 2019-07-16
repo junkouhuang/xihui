@@ -1,0 +1,92 @@
+<!--pages/splistdetail/splistdetail.wxml-->
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<wxs src="../../wxs/trim.wxs" module="tools" />
+<view>
+  <view class='top'>
+    <block wx:if="{{splistdata.spimgpath!=null && splistdata.spimgpath!=''}}">
+      <swiper style='height:{{swiper_height}}px' >
+        <swiper-item>
+          <view  style="background-image:url(http://119.23.48.31/{{tools.trim(splistdata.spimgpath)}});" data-src="http://119.23.48.31/{{splistdata.url}}" class='spimg' bindtap="multipleTap"  bindtouchstart="touchStart"
+                bindtouchend="touchEnd">
+          </view>
+        </swiper-item>
+      </swiper>
+    </block>
+    <block  wx:else>
+      <image src='/images/base/detailpic_no.png'  class='noimg'></image>
+    </block>
+  </view>
+  <view class='center'>
+    <text>{{splistdata.spmc}}</text>
+    <text>款号：{{splistdata.spcode}}</text>
+    <view class="sellprice">
+      售价：<text>￥</text><text>{{splistdata.sellprice}}</text>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='title'>
+      <text>条码</text>
+      <text>颜色</text>
+      <text>尺码</text>
+      <text>库存</text>
+      <text></text>
+    </view>
+    <block wx:if="{{list.length>0}}">
+      <view class='item {{item.sl>0?"":"color666"}}' bindtap='uni'   wx:for="{{list}}" wx:key="index"  data-id="{{index}}" >
+        <text>{{item.mxcode}}</text>
+        <text>{{item.ys}}</text>
+        <text>{{item.cm}}</text>
+        <text>{{item.sl}}</text>
+        <view class='more'>
+          <i class="iconfont icon-sanjiaoxing" wx:if="{{item.sl>0}}"></i>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='empty'>
+        <text>暂无数据~</text>
+      </view>
+    </block>
+  </view>
+  <view class='opctity'  wx:if="{{showfixup}}" bindtap='closefix'></view>
+  <view class='fix {{showfixup?"slideup":""}} {{showfixdown?"slidedown":""}}'>
+    <view  class='container'>
+      <view class='close'  bindtap='closefix'>
+        <i class="iconfont icon-shanchu2 " ></i>
+      </view>
+      <view class='left'>
+        <block wx:if="{{splistdata.spimgpath!=null}}">
+          <view  style="background-image:url(http://119.23.48.31/{{tools.trim(splistdata.spimgpath)}});"></view>
+        </block>
+        <block wx:else>
+          <image src='/images/base/detailpic_no.png' class="detailpic_no"></image>
+        </block>
+      </view>
+      <view class='right'>
+        <text class="spmc">{{splistdata.spmc}}</text>
+        <text>款号：{{splistdata.spcode}}</text>
+        <view class='sellprice'>售价：<text>￥</text><text>{{splistdata.sellprice}}</text></view>
+        <view class='yscm'>已选：<text>{{detaildata.mxcode}} - {{detaildata.ys}}</text>|<text>{{detaildata.cm}}</text></view>
+      </view>
+    </view>
+    <view class='head'>
+      <text>唯一码/常规条码</text>
+      <text>库存</text>
+      <text>数量</text>
+    </view>
+    <view wx:for="{{nuilist}}" wx:key="index" class='context'>
+      <text>{{item.unicode}}</text>
+      <text>{{item.stocks}}</text>
+      <view class='sl'>
+        <view bindtap='sub' data-id="{{index}}"><i class="iconfont icon-jiajian-"></i></view>
+        <view>{{item.sl}}</view>
+        <view  bindtap='add' data-id="{{index}}"><i  class="iconfont icon-jiajian-1"></i></view>
+      </view>
+    </view>
+    <view class='confirms'>
+      <text bindtap='confirm' class='can-click' wx:if="{{canclick}}">确定</text>
+      <text class='no-click' wx:else>确定</text>
+    </view>
+  </view>
+</view>

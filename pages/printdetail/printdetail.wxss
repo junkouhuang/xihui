@@ -1,0 +1,137 @@
+.headline{
+  padding:30rpx;
+  text-align:center;
+  font-weight:bold;
+}
+.top{
+  margin: 0 30rpx;
+  padding:30rpx 0;
+  border-bottom: 1px dashed black;
+}
+.top view{
+  padding: 10rpx 0;
+}
+.top text{
+ 
+}
+.goods{
+  margin:0 30rpx;
+}
+.goods .title{
+  display: flex;
+  align-items: center;
+  padding:20rpx 0;
+}
+.goods .title text:nth-child(1){
+  width: 10%;
+}
+.goods .title text:nth-child(2){
+  width: 15%;
+}
+.goods .title text:nth-child(3){
+  width: 15%;
+}
+.goods .title text:nth-child(4){
+  width: 15%;
+}
+.goods .title text:nth-child(5){
+  width: 15%;
+}
+.goods .title text:nth-child(6){
+  width: 15%;
+}
+.goods .title text:nth-child(7){
+  width: 15%;
+}
+.goods .title text{
+  text-align:center;
+}
+.item{
+ border-top: 1px solid #F4F4F4;
+}
+.color,
+.size,
+.unitprice,
+.amount{
+  margin: auto;
+}
+.spmc{
+  padding: 20rpx 0;
+  font-weight:bold;
+}
+.amend{
+  padding: 0 26rpx;
+  color: #0199FC;
+  display: none;
+}
+.arrows{
+  color: #0199FC;
+}
+.detail{
+  border-top: 1px dashed #F4F4F4;
+  padding: 20rpx 0;
+  display: flex;
+  align-items:center;
+}
+.detail  text:nth-child(1){
+  width: 10%;
+}
+.detail  text:nth-child(2){
+  width: 15%;
+}
+.detail  text:nth-child(3){
+  width: 15%;
+}
+.detail  text:nth-child(4){
+  width: 15%;
+}
+.detail  text:nth-child(5){
+  width: 15%;
+}
+.detail   text:nth-child(6){
+  width: 15%;
+}
+.detail  text:nth-child(7){
+  width: 15%;
+}
+.detail  text{
+  text-align:center;
+}
+.total{
+  padding: 30rpx 0;
+  border-top: 1px dashed black;
+  text-align:right;
+  display: flex;
+  justify-content: flex-end;
+}
+.total text{
+  width: 15%;
+  text-align:center;
+}
+.printtime{
+  text-align:right;
+}
+.print{
+  bottom:40rpx;
+  position:fixed;
+  width:100%;
+}
+.print-btn{
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 20rpx;
+  line-height:85rpx;
+  font-size: 14px;
+  height:85rpx;
+  background:#1B1A1F;
+  color: #BD973B;
+}  
+.bluetooth{
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 20rpx;
+  line-height:85rpx;
+  font-size: 14px;
+  height:85rpx;
+}  
+

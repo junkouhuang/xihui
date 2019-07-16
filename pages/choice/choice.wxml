@@ -1,0 +1,42 @@
+<!--pages/choice/choice.wxml-->
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<view class="choice">
+  <view class='eturn'>
+    <view class='contents'>
+      <view class='choicestyle'>
+        <text>标记支付方式</text>
+        <i class="iconfont icon-shanchu1" bindtap='return'></i>
+      </view>
+      <view class='price'>￥{{price}}<text>待付：￥{{waitpay}}</text></view>
+      <checkbox-group >
+        <view class='label' wx:for="{{items}}" wx:key="index">
+          <view>
+            <text>{{item.value}}</text>
+            <i class="iconfont icon-weixinzhifuwancheng weixin" wx:if="{{item.value == '微信'}}"></i>
+            <i class="iconfont icon-alipay alipay" wx:if="{{item.value == '支付宝'}}"></i>
+          </view>
+          <view class='zfje'>
+            <text wx:if="{{item.pay !=0 && index!=indx}}" class='symbol'>￥</text>
+            <input type='number' placeholder="￥：0.00" placeholder-style="color:#f5f5f5" data-id="{{index}}" bindinput='updwaitpay' value="{{item.pay ==0 ?'':item.pay}}"   disabled='{{item.disabled1}}' confirm-hold="{{false}}"  cursor-spacing="100" bindtap='hidepan' bindblur='showpan'></input>
+            <i class="iconfont icon-bi pan" wx:if="{{item.pay !=0 && index!=indx}}"></i>
+          </view>
+          <checkbox value="{{item.name}}"   data-id="{{index}}"  checked='{{item.checked}}' bindtap="checkboxChange" disabled='{{item.disabled2}}'/>
+        </view>
+      </checkbox-group>
+      <view class='confirmbtn'>
+        <block wx:if="{{gray==''}}">
+          <view  bindtap='sub' > 确定结算</view>
+          <image  src='/images/base/to_publish_bg.png'></image>
+        </block>
+        <block wx:else>
+          <view>确定结算</view>
+          <image  src='/images/base/to_publish_bg.png'   class='gray'></image>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!--<view class='tip  {{tipslider?"tipscss":""}}'>
+    <text>{{tips}}</text>
+  </view>-->
+</view>

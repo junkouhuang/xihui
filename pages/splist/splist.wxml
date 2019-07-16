@@ -1,0 +1,44 @@
+<!--splist.wxml-->
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<wxs src="../../wxs/trim.wxs" module="tools" />
+<view>
+  <view class='search'>
+    <view class='group'>
+      <icon class="searchcion" size='16' type='search'></icon>
+      <input type='text' placeholder='款号/条码/品名' placeholder-style='color:#ccc;' confirm-type="search" bindinput='inputspcode' maxlength='20' bindconfirm="search" focus></input>
+     </view>
+  </view>
+  <view class='goods'>
+    <block wx:if="{{list.length!=0}}">
+      <view class='item' wx:for="{{list}}" wx:for-index="index" wx:key="index" bindtap='mx' data-id="{{index}}">
+        <block wx:if="{{item.spimgpath !=null && item.spimgpath !=''}}">
+          <view style="background-image:url(http://119.23.48.31/{{tools.trim(item.spimgpath)}});" class="spimgpath"></view>
+        </block>
+        <block wx:else>
+          <view class='detailpic_no'>
+            <image src='/images/base/detailpic_no.png'></image>
+          </view>
+        </block>
+        <view class='detail'>
+          <text>{{item.spmc}}</text>
+          <text class='spcode'>款号:{{item.spcode}}</text>
+          <view class='sellprice'>
+            <text class="rmb">￥</text>
+            <text class='price'>{{item.sellprice}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='seenfoot'>{{seenfoottxt}}</view>
+    </block>
+    <block wx:else>
+      <view class='empty'>
+        <image src="{{nodataimg}}"></image>
+        <text>{{message}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='mx'>
+   
+  </view>
+</view>

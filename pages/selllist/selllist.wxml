@@ -1,0 +1,45 @@
+<!--selllist.wxml-->
+<scroll-view class='navigation' scroll-x="true" scroll-left="{{scrollLeft}}">
+  <view class='navlist'>
+    <view class=' {{status == 0?"active":""}}' bindtap='swichNav' data-index="0">全部</view>
+    <view class=' {{status == 1?"active":""}}' bindtap='swichNav'  data-index="1">待支付</view>
+    <view class=' {{status == 2?"active":""}}' bindtap='swichNav'  data-index="2">已支付</view>
+  </view>
+</scroll-view>
+<swiper  style="height:{{winHeight-45}}px" bindchange="swiperChange" current="{{status}}">
+  <swiper-item  class='list'  wx:for="{{[0,1,2]}}" wx:key="index">
+    <block wx:if="{{index == status}}">
+      <block wx:if="{{list.length!=0}}">
+        <scroll-view scroll-y="true" class='scoll-h' bindscrolltolower='lower'>
+          <view class='item' wx:for="{{list}}"  wx:key="index">
+            <view class='content'>
+              <view class='left'>
+                <view  class='time'><text>{{item.createtime}}</text></view>
+                <view class="ordercode">
+                  <text class='dh'>单号</text>
+                  <text bindtap='orderdetail' data-index="{{index}}">{{item.ordercode}}</text>
+                  <text class='copy' bindtap="copyordercode" data-id="{{index}}">复制单号</text>
+                </view>
+                <view  class='price'>￥{{item.amount}}</view>
+                <view class='username'>收银员：{{item.yyy}}</view>
+              </view>
+            </view>
+            <text wx:if="{{item.paystatus == 0}}" class='wait'>待支付</text>
+            <view wx:if="{{item.paystatus == 0}}" class="topay"  bindtap='selllistdetail' data-id="{{index}}">去支付</view>
+            <text wx:if="{{item.paystatus == 1}}" class='status'>支付中</text>
+            <text wx:if="{{item.paystatus == 3}}" class='finsh'>已支付</text>
+            <view wx:if="{{item.paystatus == 3}}" class="toprint"  bindtap='selllistdetail' data-id="{{index}}">打印小票</view>
+          </view>
+          <view class='seenfoot'>{{seenfoottxt}}</view>
+        </scroll-view>
+      </block>
+      <block wx:else>
+        <view class='empty'>
+          <image src="{{nodataimg}}"></image>
+          <text>{{message}}</text>
+        </view>
+      </block>
+    </block>
+  </swiper-item >
+</swiper>
+<image src="/images/base/acc_page_goto_top_btn.png" class='gotop' wx:if="{{showgotop}}" bindtap='gotop'></image>

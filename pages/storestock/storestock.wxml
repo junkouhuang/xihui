@@ -1,0 +1,48 @@
+<wxs src="../../wxs/trim.wxs" module="tools" />
+<scroll-view>
+  <view class='search'>
+    <view class='group'>
+      <navigator  url="../search/search?type=2" open-type="navigate" hover-class="none">
+        <view>
+          <icon class="searchcion" size='16' type='search'></icon>
+          <input type='text' placeholder='款号/条码/品名' placeholder-style='color:#ccc;' disabled value='{{selectInfo==-1?"":selectInfo}}' ></input>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <block wx:if="{{list.length>0}}">
+    <view class='container'>
+      <view class='item' wx:for="{{list}}"  wx:for-index="index" wx:key="index" bindtap='spdetail' data-index="{{index}}">
+        <block wx:if="{{item.spimgpath!=null && item.spimgpath!=''}}">
+          <view style="background-image:url({{tools.trim(item.spimgpath)}})" class="spimg"></view>
+        </block>
+        <block wx:else>
+          <image src="/images/base/detailpic_no.png"   class='noimg'/>
+        </block>
+        <view class='content'>
+          <text class='spmc'>{{item.spmc}}（{{item.spcode}}）</text>
+          <view  class='sellprice'>单价：<text>￥{{item.price}}</text></view>
+          <text class='qty'>库存：{{item.sl}}</text>
+        </view>
+      </view>
+      <view class='seenfoot'>{{seenfoottxt}}</view>
+    </view>
+    <view class='stock'>
+      <view class='totalStock'>
+        <text>总库存：</text>
+        <text>{{totalStock}}</text>
+      </view>
+      <view class='getTotalPrice'>
+        <text>总金额：</text>
+        <text>￥{{totalPrice}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='empty'>
+      <image src="{{nodataimg}}"></image>
+      <text>{{message}}</text>
+    </view>
+  </block>
+  <image src="/images/base/acc_page_goto_top_btn.png" class='gotop' wx:if="{{showgotop}}" bindtap='gotop'></image>
+</scroll-view>

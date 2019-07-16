@@ -1,0 +1,10 @@
+var trim = function (val) {
+  if (val.length > 0) {
+    return val.trim("") ;
+  } else {
+    return val;
+  }
+}
+
+module.exports.trim = trim;
+

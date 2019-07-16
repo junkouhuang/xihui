@@ -1,0 +1,92 @@
+<!--sellreturn.wxml-->
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<view class='choose-goods'>
+  <view class='dh'>
+    <icon class="searchcion" size='16' type='search'></icon>
+    <input  placeholder='请输入小票单号' placeholder-style="color:#ccc;" bindinput='getdh' confirm-type="search" bindconfirm="search" maxlength='28' adjust-position="true" focus></input>
+    <i class="iconfont icon-shizhong  returnhistory" bindtap='returnhistory'></i>
+  </view>
+  <block wx:if="{{list.length>0}}">
+    <block  wx:for="{{list}}" wx:key="index">
+      <view class='content'>
+        <view class='orderinfo'>订单信息</view>
+        <view class='username'>
+          <view>收银人员</view>
+          <text>{{item.username}}</text>
+        </view>
+        <view class='paystatus'>
+          <text wx:if="{{item.paystatus==0}}">待支付</text>
+          <text wx:if="{{item.paystatus==3}}">已支付</text>
+        </view>
+        <view class='ordercode'>
+          <text>小票单号</text>
+          <text>{{item.ordercode}}</text>
+        </view>
+        <view class='createtime'>
+          <text>成单时间</text>
+          <text>{{item.createtime}}</text>
+        </view>
+        <view class='amount'>
+          <text>￥{{item.amount}}</text>
+        </view>
+      </view>
+      <view class='detail'>
+        <view class='detail-title'>
+          <text class='spmc'>商品</text>
+          <text class='sellprice'>售价</text>
+          <view>
+            <text class='sl'>销售数量</text>
+            <text class='returnsl'>可退数量</text>
+            <text class='okreturn'>退货数量</text>
+          </view>
+        </view>
+        <view class='child' wx:for="{{item.sellDetailList}}" wx:for-item="child"  wx:for-index="index" wx:key="index">
+          <view class='spmc'>
+            <block wx:if="{{child.unicode==null}}">
+              <text class='mc'>{{child.spmc}}</text>
+            </block>
+            <block wx:else>
+                <text >{{child.spmc}}({{child.unicode}})</text>
+            </block>
+            <text class='sellprice'>{{child.sellprice}}</text>
+            <view>
+              <text class='ys'>{{child.ys}}</text>
+              <text class='cm'>{{child.cm}}</text>
+            </view>
+          </view>
+          <view class='all'>
+            <view class='spmc'>
+            </view>
+            <view class='child-sl'>
+              <text class='sl'>{{child.sl}}</text>
+              <text class='returnsl'>{{child.sl - child.returnsl}}</text>
+              <view class='okreturn'>
+                <view bindtap='sub' data-id="{{index}}" wx:if="{{child.sl - child.returnsl>0}}" >
+                  <i class="iconfont icon-jiajian"></i>
+                </view>
+                <text>{{child.wantreturnsl}}</text>
+                <view bindtap='add' data-id="{{index}}" wx:if="{{child.sl - child.returnsl>0}}" >
+                  <i  class="iconfont icon-jiajian1"></i>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='wantthsl'>
+          <text>已选择退货数量:{{wantthsl}}</text>
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+    <view class='empty'>
+      <image src="{{nodataimg}}"></image>
+      <text>{{message}}</text>
+    </view>
+  </block>
+  <view class='return'>
+    <view class="return-btn" bindtap='salereturn' wx:if="{{list.length!=0}}">退货</view>
+    <view class="return-btn-null"  wx:else>退货</view>
+  </view>
+</view>

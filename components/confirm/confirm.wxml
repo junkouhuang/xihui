@@ -1,0 +1,16 @@
+<template name="wxConfirm">
+  <view class='confirm' wx:if="{{isShowConfirm}}">
+    <view class='confirm-content'>
+      <view class='confirm-top'>
+        <text>{{tip}}</text>
+      </view>
+      <view class='confirm-input'>
+        <input type='{{type}}' placeholder='{{placeholderName}}' placeholder-style="color:#ccc;" value="{{value}}" bindinput='{{bInput}}' maxlength='100'></input>
+      </view>
+      <view class='confirm-bottom'>
+        <text catchtap='closeconfirm'>取消</text>
+        <text catchtap='{{method}}'>确定</text>
+      </view>
+    </view>
+  </view>
+</template>

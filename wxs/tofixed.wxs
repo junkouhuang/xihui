@@ -1,0 +1,10 @@
+var tofixed = function (val) {
+  if (val.length > 0) {
+    return parseFloat(val.toFixed(2))
+  } else {
+    return parseFloat(val.toFixed(2))
+  }
+}
+
+module.exports.tofixed = tofixed;
+

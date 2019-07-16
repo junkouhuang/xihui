@@ -1,0 +1,121 @@
+page{
+  background: #F0F4F5;
+}
+.choose-goods{
+  padding: 10rpx 60rpx;
+  display:flex;
+  flex-direction:column;
+  background-color: #fff;
+  margin-bottom:120rpx;
+}
+.choose-txt{
+  color: #999;
+  padding: 20rpx 0 ;
+}
+.operation{
+  display: flex;
+  height: 80rpx;
+}
+.editor{
+  color: #0199FC;
+  padding: 20rpx 0 ;
+  position: absolute;
+  right: 60rpx;
+}
+.item{
+ border-top: 1px solid #F4F4F4;
+ font-size: 30rpx;
+}
+.spmc{
+  padding: 20rpx 0;
+  font-weight:bold;
+}
+.detail{
+  border-top: 1px dashed #F4F4F4;
+  padding: 20rpx 0;
+  display: flex;
+  align-items:center;
+}
+.detail .del{
+  width: 20%;
+}
+.detail .del i{
+  color: red;
+}
+.detail .color-size{
+  width: 30%;
+}
+.detail .stock{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  color: #999;
+  text-align: right;
+}
+.detail image{
+  width: 36rpx;
+  height: 36rpx;
+}
+.choose-ico{
+  border-top: 1px solid #F4F4F4;
+  display: flex;
+  justify-content: center;
+  padding:20rpx 0;
+}
+.choose-ico i{
+  font-size: 40px;
+  margin:auto;
+}
+.choose-ico i:active {
+  background-color:rgba(0, 0, 0, 0.1);
+  opacity:0.7;
+}
+.save{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  z-index:2;
+  justify-content:flex-end;
+}
+.heji{
+  width: 70%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0px 10rpx;
+}
+.heji text{
+  color: #f04d52;
+}
+.heji .total{
+  color: #333;
+}
+.save-btn{
+  width: 30%;
+  height: 100rpx;
+  background-color: #f04d52;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+}
+.save-btn-null{
+  width: 30%;
+  height: 100rpx;
+  background-color: #ccc;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+}
+.del-btn{
+  width: 100%;
+  height: 100rpx;
+  line-height:100rpx;
+  position: fixed;
+  bottom: 0;
+  background-color: #E21918;
+  color: #fff;
+  display: flex;
+  justify-content:center;
+}

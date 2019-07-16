@@ -1,0 +1,40 @@
+<!--pages/pdhistory/pdhistory.wxml-->
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<scroll-view>
+  <view class='container'>
+    <view  class='list'  wx:for="{{list}}" wx:key="index">
+      <view class='list-top'>
+          <text>{{item.spmc}}（{{item.spcode}}）</text>
+      </view>
+      <view class='list-bottom'>
+        <view class='list-left'>
+          <text>{{item.unicode}}</text>
+          <text>{{item.ys}} - {{item.cm}}</text>
+          <text>￥{{item.sellprice}}</text>
+        </view>
+        <view class='list-right'>     
+          <text>盘点：{{item.pdsl}}</text>
+          <text>库存：{{item.stock}}</text>
+          <text>盈亏：{{item.stock-item.pdsl}}</text>
+      </view>
+      </view>
+    </view>
+  </view>
+  <view class="pd-btn">
+    <view class="calculate">
+      <view>
+        <text>盘点金额：￥{{pdamount}}</text>
+        <text>库存金额：￥{{stockamount}}</text>
+      </view>
+      <view>
+        <text>盘点数量：{{pdnumber}}</text>
+      </view>
+      <view>
+        <text>盈亏数量：{{yknumber}}</text>
+        <text>库存数量：{{stocknumber}}</text>
+      </view>
+    </view>
+    <view class="gather" bindtap='submit'>提交审核</view>
+  </view>
+</scroll-view>

@@ -1,0 +1,68 @@
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<view>
+  <view class='operation' wx:if="{{!isopennewdh}}">
+    <view class='choose-txt' bindtap='editor' wx:if="{{!del}}">
+      <i class="iconfont icon-icon07"></i>
+      <text>编辑</text>
+    </view>
+    <view class='choose-txt' bindtap='editor' wx:else>
+      <text>完成</text>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='mdmc'>
+      <text class='mdmc-txt'>店名</text>
+      <text class='mdmc-name'>{{mdmc}}</text>
+    </view>
+    <view class='dh'>
+      <text class='dh-txt'>单号</text>
+      <text class='dh-name'>{{pddh}}</text>
+    </view>
+    <view class='remark'>
+      <text class='remark-txt'>备注</text>
+      <textarea bindinput='getbz' value='{{bz}}' disabled='{{!isopennewdh}}' class='{{isopennewdh?"":"white"}}'>
+      </textarea>
+    </view>
+  </view>
+  <block  wx:if="{{isopennewdh}}">
+    <view class='pd-btn'>
+      <view bindtap='save' class='gather'>保存</view>
+    </view>
+  </block>
+  <block  wx:else>
+    <view class='bottom'>
+      <view class='title'>
+        <view>盘点人</view>
+        <view>盘点总数</view>
+        <view>操作</view>
+      </view>
+      <block  wx:if="{{list.length>0}}">
+        <view class='item' wx:for="{{list}}" wx:key="index">
+          <block wx:if="{{index == 0}}">
+            <view>{{username}}</view>
+          </block>
+          <block wx:else>
+            <view>{{username}}（子单{{index+1}}）</view>
+          </block>
+          <view>{{item.pdtotal==null?0:item.pdtotal}}</view>
+          <view>
+            <button data-index='{{index}}' bindtap='checkstart'>开始盘点</button>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='addbranch' bindtap='addbranch'>
+      <i class="iconfont icon-plus "></i>
+      <text>新增我的子单（可用于多区域盘点）</text>
+    </view>
+    <block  wx:if="{{!del}}">
+      <block wx:if="{{status ==2}}">
+        <view class="pd-btn">
+          <view class="gather" bindtap='pdhisoty'>{{merge}}</view>
+        </view>
+      </block>
+    </block>
+    <view class='del-btn' bindtap='deletepdd'  wx:else>删除</view>
+  </block>
+</view>

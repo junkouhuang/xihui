@@ -1,0 +1,85 @@
+page{
+  background: #F5f5f5;
+}
+.item{
+  background-color: #fff;
+  margin: 20rpx;
+  display:flex;
+  align-items:center;
+  border-radius: 20rpx;
+}
+.item:active {
+  background-color:#ebeff2;
+  opacity:0.7;
+}
+.item .content{
+  padding:30rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.left{
+  display: flex;
+  flex-direction: column;
+}
+.wait{
+  position: absolute;
+  right: 30rpx;
+  top: 100rpx;
+  color: #0199FC;
+}
+.finshed{
+  position: absolute;
+  right: 30rpx;
+  top: 100rpx;
+  color: #30CD24;
+}
+.left .dh text:first-child{
+    background-color: #f04d52;
+    color: #fff;
+    margin-right: 20rpx;
+    font-size: 26rpx;
+    padding: 4rpx 10rpx;
+}
+.left .dh text:last-child{
+    font-weight: bold
+}
+.amount{
+  margin-top: 20rpx;
+  color: #999;
+}
+.amount text{
+  letter-spacing: 58rpx;
+}
+.price{
+  margin-top: 10rpx;
+  color: #999;
+}
+.price text{
+  letter-spacing: 58rpx;
+}
+.time{
+  margin-top: 10rpx;
+  color: #999;
+}
+.item  i{
+  position: absolute;
+  right: 50rpx;
+  font-size: 30px;
+}
+.empty{
+  display: flex;
+  flex-direction: column;
+  padding:100rpx;
+}
+.empty image{
+  width: 400rpx;
+  height: 200rpx;
+  margin: auto;
+}
+.empty text{
+  margin: auto;
+  color: #C1C1C1;
+  padding: 20rpx;
+}

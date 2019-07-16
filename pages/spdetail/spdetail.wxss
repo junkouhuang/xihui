@@ -1,0 +1,105 @@
+page{
+  background-color: #ebeff2;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+swiper{
+  margin-top: 0;
+}
+swiper-item{
+  display: flex;
+}
+.spimg{
+   width: 100%; 
+   height:100%;
+   background-size:cover;
+   background-position: center;
+}
+image {
+  width:200rpx;
+  height:200rpx;
+  margin: auto;
+}
+.head{
+  padding: 30rpx;
+  background-color: #fff;
+}
+.spmc{
+  font-weight: bold;
+}
+.sellprice{
+  margin-top: 20rpx;
+}
+.sellprice text:nth-child(2){
+  color: #f04d52;
+}
+.content{
+  margin-top: 10rpx;
+  padding: 30rpx;
+  background-color: #fff;
+}
+.content .title{
+  display: flex;
+  padding:20rpx 0;
+  border-bottom:2rpx solid #ebeff2;
+  font-weight: bold;
+}
+.content .title text{
+  margin: auto;
+}
+.content .title text:nth-child(1){
+  width: 40%;
+}
+.content .title text:nth-child(2){
+  width: 20%;
+  text-align: center;
+}
+.content .title text:nth-child(3){
+  width: 20%;
+  text-align: center;
+}
+.content .title text:nth-child(4){
+  width: 20%;
+  text-align: center;
+}
+.content .item{
+  display: flex;
+  align-items: center;
+  border-bottom:2rpx solid #ebeff2;
+}
+.content .item .mdmc{
+  width: 40%;
+}
+.content .item .yscmsl{
+  width: 60%;
+  display: flex;
+  align-items: center;
+  border-left: 2rpx solid #ebeff2;
+}
+.content .item .yscmsl .ys{
+  width: 33%;
+  text-align: center;
+}
+.content .item .yscmsl .cmsl{
+  width: 66%;
+  border-left: 2rpx solid #ebeff2;
+}
+.content .item .yscmsl .slcm{
+ display: flex;
+ padding: 10rpx 0;
+ border-bottom: 2rpx solid #ebeff2;
+}
+.content .item .yscmsl .slcm:last-child{
+  border-bottom: 2rpx solid #fff;
+}
+.content .item .yscmsl .slcm text{
+  width: 50%;
+  text-align: center;
+}
+.nodata{
+  text-align: center;
+  padding:30rpx 0 0 0;
+}

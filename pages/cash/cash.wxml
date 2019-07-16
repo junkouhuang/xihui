@@ -1,0 +1,18 @@
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<view class='container'>
+  <image src="/images/cash/coin_purse_head_bg.png" class='card_bg'></image>
+  <view class="cash">
+    <view class='rental'> 
+      <view>
+        <text>￥</text>
+        <text>{{allAmount}}</text>
+      </view>
+    </view>
+    <view class='freeze'>
+      <text>{{freezenAmount}}元</text>
+      <text>冻结金额</text>
+    </view>
+    <text bindtap='extract' class='extract'>提现</text>
+  </view>
+</view>

@@ -1,0 +1,129 @@
+<!--allocatinglistdetail.wxm-->
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<scroll-view class='container'>
+  <view class='top'>
+    <view class='ordercode'>
+      <text>单号</text>
+      <text>{{ordercode}}</text>
+    </view>
+    <view class='time'>
+      <text>业务时间</text>
+      <text>{{createtime}}</text>
+    </view>
+    <view class='fstorename'>
+      <text>调出门店</text>
+      <text>{{fstorename}}</text>
+    </view>
+    <view class='tstorename'>
+      <text>调入门店</text>
+      <text>{{tstorename}}</text>
+    </view>
+    <view class='wlgs {{status ==0 && zt==4?"pd":""}}'>
+      <text>物流公司</text>
+      <block  wx:if="{{status == 0 || status == 1}}">
+        <block wx:if="{{zt == 0}}">
+          <input type='text' value='{{wlgs}}' maxlength='20' bindinput='wlgs' ></input>
+        </block>
+      </block>
+      <block wx:else>
+        <text>{{wlgs}}</text>
+      </block>
+    </view>
+    <view class='wldh  {{status ==0 && zt==4?"pd":""}}'>
+      <text>物流单号</text>
+      <block  wx:if="{{status == 0 || status == 1}}">
+        <block wx:if="{{zt == 0}}">
+          <input type='text' value='{{wldh}}' maxlength='18' bindinput='wldh' ></input>
+         </block>
+      </block>
+      <block wx:else>
+        <text>{{wldh}}</text>
+      </block>
+      <view wx:if="{{status == 0 || status == 1}}">
+        <block wx:if="{{zt == 0}}">
+          <view hover-class="hoverclass"  bindtap='openqrcode'>
+            <i class="iconfont icon-saoma"></i>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='bz  {{status ==0 && zt==4?"pd":""}}'>
+      <text>备注</text>
+      <block  wx:if="{{status == 0 || status == 1  && zt == 3}}">
+       <block wx:if="{{zt == 0}}">
+          <textarea  cursor-spacing="100"   value='{{bz}}' ></textarea>
+        </block>
+      </block>
+      <block wx:else>
+        <text>{{bz}}</text>
+      </block>
+    </view>
+  </view>
+  <view class='content {{zt==4 && status ==4?"mr":""}}' wx:if="{{list.length>0}}">
+    <view class='mx'>
+      <text class='dhmx'>调货单明细</text>
+      <view>
+        <text>数量：{{dhsl}}</text>
+        <text>总额：￥{{dhje}}</text>
+      </view>
+    </view>
+    <view class='goods'>
+      <view class='title'>
+        <text>商品</text>
+        <text>款号</text>
+        <text>单价</text>
+        <text>调出数量</text>
+        <text>金额</text>
+      </view>
+      <view class='item' wx:for="{{list}}"  wx:key="index" wx:for-index="index" >
+        <view class='spmc'>
+          <text>{{item.spmc}}（{{item.unicode}}）</text>
+          <block  wx:if="{{status == 0 || status == 1 }}">
+            <view wx:if="{{ zt == 3}}">
+              <view hover-class="hoverclass" bindtap="upd" data-id="{{index}}" wx:if="{{index != idx}}">
+                <i class="iconfont icon-icon07 bi"></i>
+              </view>
+              <view  hover-class="hoverclass" bindtap="fin" wx:else>
+                <i class="iconfont icon-baocun baocun"></i>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class='detail'>
+          <view class='del' data-id="{{index}}" bindtap='del' hover-class="hoverclass"  >
+            <i class="iconfont icon-shanchu"  wx:if="{{index == idx}}"></i>
+          </view>
+          <text>{{item.spcode}}</text>
+          <text>{{item.sellprice}}</text>
+          <input class='num {{index == idx?"act":""}}' disabled='{{index != idx}}' value='{{item.fhsl}}'  type='number' bindinput='inpsl'  data-id="{{index}}"></input>
+           <text>{{item.fhje}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='choose-ico'  wx:if="{{status == 0 || status == 1}}">
+    <block wx:if="{{zt == 3}}">
+      <view hover-class="hoverclass" bindtap='openqrcode'>
+        <i class="iconfont icon-saoma"></i>
+      </view>
+      <view hover-class="hoverclass" bindtap='tosalelist'>
+        <i class="iconfont icon-jiahao"></i>
+      </view>
+    </block>
+  </view>
+  <view class='btn'>
+    <block wx:if="{{zt ==0}}">
+      <block wx:if="{{status == 0 || status == 1}}">
+        <block wx:if="{{ishowtwobtn}}">
+          <button class='confirm-del' bindtap="deletedh">删除整单</button> 
+          <button class='confirm-ok' bindtap="sent">发货出库</button> 
+        </block>
+        <button class='editdh'  loading="{{loading}}"  bindtap="save" wx:else>保存</button> 
+      </block>
+    </block>
+    <block wx:else>
+      <button wx:if="{{status == 3 && zt==1}}" class='editdh'  loading="{{loading}}"  bindtap="sh">收货入库</button> 
+    </block>
+  </view>
+</scroll-view>

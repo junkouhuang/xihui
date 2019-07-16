@@ -1,0 +1,69 @@
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<view>
+  <view class='choose-goods'>
+    <block  wx:if="{{list.length==0}}">
+      <view class='operation'>
+        <text class='choose-txt'>选择商品</text>
+        <view class='editor'>
+          <view  wx:if="{{!del}}"  bindtap='editor'>
+            <i class="iconfont icon-icon07"></i>
+            <text>编辑</text>
+          </view>
+          <view  bindtap='editor'  wx:else >
+            <text>完成</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block  wx:else>
+      <view class='operation'>
+        <view class='editor'>
+          <view  wx:if="{{!del}}"  bindtap='editor'>
+            <i class="iconfont icon-icon07"></i>
+            <text>编辑</text>
+          </view>
+          <view  bindtap='editor'  wx:else >
+            <text>完成</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='choose-ico'>
+      <i class="iconfont icon-saoma" bindtap='openqrcode'></i>
+      <i class="iconfont icon-jiahao" bindtap='splist'></i>
+    </view>
+    <block  wx:if="{{list.length>0}}">     
+      <view class='goods'>
+        <view class='item' wx:for="{{list}}"  wx:for-index="index" wx:key="index" >
+          <view class='spmc'>
+            <text>{{item.spmc}}（{{item.unicode}}）</text>
+          </view>
+          <view class='module'>
+            <view class='detail'>
+              <view class='del'>
+                <i class="iconfont icon-shanchu" wx:if="{{del}}" data-id="{{index}}" bindtap='del'></i>
+              </view>
+              <text class='color-size'>{{item.ys}}-{{item.cm}}</text>
+              <view class='stock'>
+                <text>盘点数量：{{item.pdsl}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='save' wx:if="{{!del}}">
+    <block wx:if="{{status==0}}">
+      <view class='heji'>合计：<text class='total'>{{total}}</text></view>
+      <view class="save-btn" bindtap='completepdbranch' wx:if="{{list.length!=0}}">完成扫描</view>
+      <view class="save-btn-null"  wx:else>完成扫描</view>
+    </block>
+    <block wx:else>
+      <view class="save-btn-null">已完成扫描</view>
+    </block>
+
+  </view>
+  <view class='del-btn' bindtap='deletebranch'  wx:else>删除</view>
+</view>

@@ -1,0 +1,151 @@
+page{
+  background: #ebeff2;
+}
+.top{
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+.top view{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #F4F4F4;
+  display: flex;
+}
+.top text:nth-child(1){
+ width: 30%;
+ color: #999;
+}
+.top text:nth-child(2){
+  width: 70%;
+}
+.wlgs {
+  padding: 10rpx 0!important;
+  display: flex;
+  align-items: center;
+}
+.wlgs input {
+  width: 70%;
+  background-color: #F4F4F4;
+  padding:20rpx;
+}
+.wlgs text:nth-child(2){
+  width: 70%;
+  padding:20rpx;
+}
+.wldh {
+  padding: 10rpx 0!important;
+  display: flex;
+  align-items: center;
+}
+.wldh input {
+  width: 55%;
+  background-color: #F4F4F4;
+  padding:20rpx;
+}
+.wldh text:nth-child(2) {
+  width: 70%;
+  padding:20rpx;
+}
+.wldh view {
+  width: 15%;
+  padding:0!important;
+  border: 0;
+  justify-content:flex-end;
+}
+.wldh view i {
+  font-size: 30px;
+}
+.bz {
+  padding: 10rpx 0!important;
+  display: flex;
+  align-items: center;
+}
+.bz textarea{
+  width: 70%;
+  background-color: #F4F4F4;
+  padding:20rpx;
+  height:90rpx;
+}
+.bz text:nth-child(2){
+  width: 70%;
+  padding:20rpx;
+  height:90rpx;
+}
+.detail{
+  margin-top: 10rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+  margin-bottom: 160rpx;
+}
+.title {
+  display: flex;
+  border-bottom:  1px solid #F4F4F4;
+}
+.title text{
+  color: #999;
+  padding: 20rpx 0;
+}
+.total{
+  position: absolute;
+  right: 30rpx;
+}
+.basic {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+}
+.basic text{
+  font-size: 34rpx;
+}
+.basic image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.name{
+  padding: 0 10rpx;
+}
+.unitprice{
+  position: absolute;
+  right: 30rpx;
+}
+.group{
+  display: flex;
+  border-bottom:  1px solid #F4F4F4;
+  padding: 16rpx 0;
+}
+.group text{
+  margin: auto;
+  font-size: 30rpx;
+}
+.fh{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  z-index:2;
+}
+.fh-btn{
+  width: 30%;
+  height: 100rpx;
+  background-color: #f04d52;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  position: absolute;
+  right: 0;
+}
+.choose-ico{
+  border-top: 1px solid #F4F4F4;
+  display: flex;
+  justify-content: center;
+  padding:20rpx 0;
+}
+.choose-ico i{
+  font-size: 40px;
+  margin:auto;
+}
+.choose-ico i:active {
+  background-color:rgba(0, 0, 0, 0.1);
+  opacity:0.7;
+}

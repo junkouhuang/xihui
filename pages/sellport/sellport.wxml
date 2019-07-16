@@ -1,0 +1,41 @@
+<scroll-view>
+  <view wx:if="{{list.length>0}}">
+    <view wx:for="{{list}}" wx:key="index" >
+      <view class='item' >
+        <block wx:if="{{item.spimgpath}}">
+          <view style="background-image:url({{item.spimgpath}})" class="spimg" ></view>
+        </block>
+        <block wx:else>
+          <image src="/images/base/detailpic_no.png" />
+        </block>
+        <view class='content'>
+          <text>{{item.spmc}}</text>
+          <text class='yscm'>{{item.ys}}-{{item.cm}}</text>
+          <view class='sellprice'>
+              售价：<text>￥{{item.sellprice}}</text>
+              <view bindtap="arrowsdowm"  data-id="{{index}}"  wx:if="{{cousedis!=index}}">
+                <i class="iconfont icon-downarrow-blue"></i>
+              </view>
+              <view  bindtap="arrowsup"  wx:else>
+                <i class="iconfont icon-uparrow-blue"></i>
+              </view>
+          </view>
+          <text class='qty'>数量：{{item.sl}}</text>
+        </view>
+      </view>
+      <view class='child' wx:if="{{cousedis==index}}">
+        <text>收银员：{{item.yyy}}</text>
+        <text>单位：{{item.dw}}</text>
+        <text>条码：{{item.unicode}}</text>
+        <text>订单号：{{item.ordercode}}</text>
+        <text>创建时间：{{item.createtime}}</text>
+      </view>
+    </view>
+    <view class='seenfoot'>{{seenfoottxt}}</view>
+  </view>
+  <view class='empty' wx:else>
+    <image src="{{nodataimg}}"></image>
+    <text>{{message}}</text>
+  </view>
+  <image src="/images/base/acc_page_goto_top_btn.png" class='gotop' wx:if="{{showgotop}}" bindtap='gotop'></image>
+</scroll-view>

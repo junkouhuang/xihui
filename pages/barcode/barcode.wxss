@@ -1,0 +1,76 @@
+page {
+  background-color: #BD973B;
+}
+.panel {
+  position:absolute;
+  width:600rpx;
+  height:800rpx;
+  top:50%;
+  left:50%;
+  margin-left:-325rpx;
+  margin-top:-415rpx;
+  border-radius:20rpx;
+  background-color:#fff;
+  padding:30rpx;
+}
+.header {
+  height:140rpx;
+  background-color:#f0f0f0;
+  border-radius:10rpx 10rpx 0 0;
+  line-height:140rpx;
+  text-align:center;
+  color:#BD973B;
+  margin-top:100rpx;
+}
+.barcode {
+  display: flex;
+  height: 300rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.payico{
+  display: flex;
+  align-items: center;
+  margin:30rpx;
+}
+
+.payico i{
+  color: #BD973B;
+}
+.payico text{
+  color: #BD973B;
+}
+.barnum {
+  width: 600rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+  letter-spacing: 6rpx;
+  white-space: nowrap;
+  font-size: 32rpx;
+  text-align:center;
+}
+.barcode > canvas {
+  width: 600rpx;
+  height: 150rpx;  
+}
+.qrcode {
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.qrcode > canvas {
+  width: 420rpx;
+  height: 420rpx;
+}
+.needpay{
+  text-align:center;
+}
+.needpay text:nth-child(1){
+  font-size: 30rpx;
+}
+.needpay text:nth-child(2){
+  font-size: 40rpx;
+}

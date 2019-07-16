@@ -1,0 +1,290 @@
+page{
+  background: #ebeff2;
+}
+.choose-goods{
+  padding: 10rpx 60rpx;
+  display:flex;
+  flex-direction:column;
+  background-color: #fff;
+}
+.choose-txt{
+  color: #999;
+  padding: 20rpx 0 ;
+}
+.editor{
+  color: #0199FC;
+  padding: 20rpx 0 ;
+  display:flex;
+  align-items:center;
+  border-bottom: 2rpx solid #ebeff2;
+}
+.editor .editing{
+  display: flex;
+  align-items: center;
+}
+
+.record{
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+  font-size:60rpx;
+}
+.goods .title{
+  display: flex;
+  align-items: center;
+  padding:20rpx 0;
+}
+.goods .title text:nth-child(1){
+  width: 20%;
+}
+.goods .title text:nth-child(2){
+  width: 15%;
+  text-align:center;
+}
+.goods .title text:nth-child(3){
+  width: 15%;
+  text-align:center;
+}
+.goods .title text:nth-child(4){
+  width: 15%;
+  text-align:center;
+}
+.goods .title text:nth-child(5){
+  width: 15%;
+  text-align:center;
+}
+.goods .title text:nth-child(6){
+  width: 12%;
+  text-align:center;
+}
+.goods .title .drop-arrow{
+  width: 8%;
+}
+.item{
+ border-top: 1px solid #F4F4F4;
+ font-size: 30rpx;
+}
+.color,
+.size,
+.sellprice,
+.realprice,
+.amount{
+  margin: auto;
+}
+.spmc{
+  padding: 20rpx 0;
+  font-weight:bold;
+}
+.arrows{
+  color: #0199FC;
+}
+.detail{
+  border-top: 1px dashed #F4F4F4;
+  padding: 20rpx 0;
+  display: flex;
+  align-items:center;
+}
+.detail .del{
+  width: 20%;
+}
+.detail .del view{
+  width: 70rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+}
+.detail .del i{
+  color: red;
+}
+.detail text:nth-child(2){
+  width: 15%;
+  text-align:center;
+  margin: auto;
+}
+.detail text:nth-child(3){
+  width: 15%;
+  text-align:center;
+  margin: auto;
+}
+.detail text:nth-child(4){
+  width: 15%;
+  text-align:center;
+  margin: auto;
+}
+.detail text:nth-child(5){
+  width: 15%;
+  text-align:center;
+  margin: auto;
+}
+.detail text:nth-child(6){
+  width: 12%;
+  text-align:center;
+  margin: auto;
+}
+.detail .drop-arrow{
+  width: 8%;
+  height: 36rpx;
+  display: flex;
+  color:  #0199FC;
+  justify-content: center;
+}
+.detail image{
+  width: 36rpx;
+  height: 36rpx;
+}
+.discount{
+  border-top: 1px dashed #F4F4F4;
+  background-color:#f7f7f7;
+}
+.discount .top{
+  display: flex;
+  padding: 20rpx 0;
+}
+.discount .top text{
+  margin: auto;
+}
+.discount .bottom{
+  display: flex;
+  padding: 20rpx 0;
+}
+.discount .bottom input:nth-child(1),
+.discount .bottom input:nth-child(2),
+.discount .bottom input:nth-child(4),
+.discount .bottom input:nth-child(5) {
+  margin: 4rpx 10rpx;
+  text-align:center;
+  z-index: 1;
+}
+.discount .bottom view{
+  margin: 4rpx 10rpx;
+  text-align:center;
+  display: flex;
+  align-items:center;
+  z-index: 1;
+}
+.discount .bottom view input{
+  background-color: #fff;
+  border-bottom:1px solid #0199FC;
+}
+.choose-ico{
+  border-top: 1px solid #F4F4F4;
+  display: flex;
+  justify-content: center;
+  padding:20rpx 0;
+}
+.choose-ico view{
+  margin:auto;
+}
+.choose-ico i{
+  font-size: 40px;
+}
+.showmodel{
+  padding:10rpx 60rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.zkml{
+  padding:40rpx 0;
+  display: flex;
+  position: relative;
+  align-items:center;
+}
+.wholediscount{
+  color: #0199FC;
+  position:absolute;
+  right: 130rpx;
+}
+.discounts{
+  background-color: #f04d52;
+  position:absolute;
+  right: 0;
+  color: #fff;
+  padding: 10rpx;
+}
+.settle{
+  padding:20rpx 0;
+  display: flex;
+}
+.settle-txt{
+  color: #999;
+}
+.remark{
+  padding:10rpx 60rpx;
+  margin-top: 20rpx;
+  margin-bottom:120rpx;
+  background-color: #fff;
+}
+.mobile {
+  display:flex;
+  align-items: center;
+}
+.mobile text{
+  width: 20%;
+  color: #999;
+}
+.mobile input {
+  background-color: #F4F4F4;
+  padding:20rpx;
+  width: 80%;
+}
+.bz{
+  display: flex;
+}
+.bz-txt{
+  width: 20%;
+  color: #999;
+}
+.bz view{
+  width: 80%;
+  padding:20rpx;
+  height: 90rpx;
+  background-color: #F4F4F4;
+  overflow: hidden;
+  word-wrap:break-word;
+}
+textarea{
+  width: 80%;
+  padding:20rpx;
+  height: 90rpx;
+  background-color: #F4F4F4;
+}
+.addsell{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  z-index:2;
+}
+.heji{
+  width: 70%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0px 10rpx;
+}
+.heji text{
+  color: #f04d52;
+}
+.heji .total{
+  color: #333;
+}
+.totalPrice{
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+.addsell-btn{
+  width: 30%;
+  height: 100rpx;
+  background-color: #f04d52;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+}
+.addsell-btn-null{
+  width: 30%;
+  height: 100rpx;
+  background-color: #ccc;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+}

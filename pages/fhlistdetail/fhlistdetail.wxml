@@ -1,0 +1,54 @@
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<view>
+  <view class='top'>
+    <view>
+      <text>单号</text>
+      <text>{{ordercode}}</text>
+    </view>
+    <view>
+      <text>业务时间</text>
+      <text>{{createtime}}</text>
+    </view>
+    <view>
+      <text>状态</text>
+      <text class='wait' wx:if="{{status == 3}}">待收货</text>
+      <text class='wait' wx:else>已收货</text>
+      <text class='do' bindtap='rcvfh' wx:if="{{status == 3}}">收货入库</text>
+    </view>
+    <view>
+      <text>备注</text>
+      <text>{{bz}}</text>
+    </view>
+  </view>
+  <view class='detail'>
+    <view class='title'>
+      <text class='shmx'>收货明细</text>
+      <view class='content'>
+        <text>合计：</text>
+        <view><text>数量：</text><text class='total'>{{toatal}}</text></view>
+        <view><text>总金额：</text><text class="totalamount">￥{{totalamount}}</text></view>
+      </view>
+    </view>
+    <view class='content'>
+      <view class='item'>
+        <block wx:for="{{list}}" wx:key="index">
+          <view class='basic'>
+            <block wx:if="{{item.spimgpath!=null}}">
+              <image src='{{item.spimgpath}}'></image>
+            </block>
+            <block wx:else>
+              <image src='/images/base/detailpic_no.png'></image>
+            </block>
+            <text class='name'>{{item.spmc}}</text>
+            <text class='unitprice'>￥{{item.sellprice}}</text>
+          </view>
+          <view class='group'>
+            <text>发货数量：{{item.fhsl}}</text>
+            <text>条码：{{item.unicode}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

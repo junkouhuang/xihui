@@ -1,0 +1,20 @@
+page{
+  background-color: #F4F4F4;
+}
+.list{
+  background-color: #B8944D;
+  color: #fff;
+  margin: 40rpx;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius:20rpx;
+}
+.list text:nth-child(1){
+  padding:20rpx 20rpx 40rpx 20rpx;
+  text-shadow: 1px 1px 2px black, -1px -1px 2px white;
+}
+.list text:nth-child(2){
+  padding:40rpx 20rpx 20rpx 20rpx;
+  text-shadow: 1px 1px 2px black, -1px -1px 2px white;
+}

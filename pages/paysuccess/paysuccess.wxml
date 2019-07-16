@@ -1,0 +1,20 @@
+<!--pages/paysuccess/paysuccess.wxml-->
+<view class='paysuccess'>
+  <view class='top'></view>
+  <view class='content'>
+    <view class='c_tp'>
+      <i class="iconfont icon-dagou-copy"></i>
+      <text>支付成功</text>
+    </view>
+    <view class='c_tb'>
+      <text>订单号：{{ordercode}}</text>
+      <text>收款人：{{username}}</text>
+      <view class='money'><text>金</text>额：￥{{amount}}</view>
+      <view class='time'><text>时</text>间：{{sendtime}}</view>
+    </view>
+    <view class='c_btn'>
+      <button bindtap='retun'>返回</button>
+      <button bindtap='print'>去打印</button>
+    </view>
+  </view>
+</view>

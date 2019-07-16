@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/choice/choice",
+    "pages/paysuccess/paysuccess",
+    "pages/login/login",
+    "pages/extract/extract",
+    "pages/cash/cash",
+    "pages/card/card",
+    "pages/barcode/barcode",
+    "pages/user/user",
+    "pages/splist/splist",
+    "pages/spdetail/spdetail",
+    "pages/search/search",
+    "pages/print/print",
+    "pages/allocatinglistdetail/allocatinglistdetail",
+    "pages/checkstart/checkstart",
+    "pages/check/check",
+    "pages/sellreturn/sellreturn",
+    "pages/storereturnlist/storereturnlist",
+    "pages/storereturndetail/storereturndetail",
+    "pages/allocatinglist/allocatinglist",
+    "pages/fhlist/fhlist",
+    "pages/fhlistdetail/fhlistdetail",
+    "pages/sell/sell",
+    "pages/selllist/selllist",
+    "pages/selllistdetail/selllistdetail",
+    "pages/allocatingnew/allocatingnew",
+    "pages/storestock/storestock",
+    "pages/sellport/sellport",
+    "pages/checklist/checklist",
+    "pages/pdhistory/pdhistory",
+    "pages/printdetail/printdetail",
+    "pages/returnhistory/returnhistory",
+    "pages/splistdetail/splistdetail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#303133",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#ED9823",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath": "images/toolbar/home_black.png",
+        "selectedIconPath": "images/toolbar/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/toolbar/user_black.png",
+        "selectedIconPath": "images/toolbar/user.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

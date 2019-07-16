@@ -1,0 +1,40 @@
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<view class="login">
+  <view class='title'>
+   <image src="/images/login/title.png"></image>
+  </view>
+  <view class='vessel'>
+    <form class='login-form'>
+      <view class="input-group {{dh_focus ? 'active' : ''}}">
+        <text class='dh'>店号</text>
+        <input placeholder='请输入店号'  type='text' placeholder-style="color:#ccc;" bindfocus="inputFocus" bindblur="inputBlur" data-type="0" bindinput="dhInput" value="{{mdcode}}" maxlength='12'></input>
+        <view  bindtap="cleardh" hidden="{{!cleardh}}" class='circle'>
+         <i class="iconfont icon-shanchu2"></i>
+        </view>
+      </view>
+      <view class="input-group {{username_focus ? 'active' : ''}}">
+        <text class='username'>账号</text>
+        <input placeholder='请输入账号' type='text' placeholder-style="color:#ccc;" bindfocus="inputFocus" bindblur="inputBlur" data-type="1" bindinput="usernameInput" value="{{username}}" cursor-spacing="80" maxlength='12'></input>
+        <view  bindtap="clearusername"  hidden="{{!clearusername}}" class='circle'>
+          <i class="iconfont icon-shanchu2"></i>
+        </view>
+      </view>
+      <view class="input-group {{password_focus ? 'active' : ''}}" wx:if="{{!seen}}" >
+        <text class='password'>密码</text>
+        <input placeholder='请输入密码' type="password" placeholder-style="color:#ccc;" bindfocus="inputFocus" bindblur="inputBlur" data-type="2" bindinput="passwordInput" value='{{password}}'  cursor-spacing="20" maxlength='12'></input>
+        <view class=' circle1'  bindtap="seen">
+          <i class="iconfont icon-icon-dengluzhuce-yanjingdakai"></i>
+        </view>
+      </view>
+      <view class="input-group {{password_focus ? 'active' : ''}}" wx:else>
+        <text class='password'>密码</text>
+        <input placeholder='请输入密码' type="text" placeholder-style="color:#ccc;" bindfocus="inputFocus" bindblur="inputBlur" data-type="2" bindinput="passwordInput" value='{{password}}'  cursor-spacing="20" maxlength='12'></input>
+        <view class=' circle1' bindtap="close">
+          <i class="iconfont icon-icon-dengluzhuce-yanjingguanbi" ></i>
+        </view>
+      </view>
+      <button class='confirm-btn'  loading="{{loading}}"  bindtap="tologin" >登录</button> 
+    </form>
+  </view> 
+</view>

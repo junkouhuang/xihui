@@ -1,0 +1,24 @@
+<scroll-view>
+  <view class='list'>
+    <block wx:if="{{lists.length!=0}}">
+      <view class='item' wx:for="{{lists}}"  wx:key="index" bindtap='thdetail' data-index="{{index}}">
+        <view class='content'>
+          <view class='left'>
+            <view  class='time'><text>{{item.createtime}}</text></view>
+            <view class="ordercode"  data-id="{{index}}"><text>单号</text>{{item.ordercode}}</view>
+            <view  class='price'>￥{{item.amount}}</view>
+            <view class='username'>收银员：{{item.yyy}}</view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{seenfoot}}" class='seenfoot'>已经见底啦~</view>
+    </block>
+    <block wx:else>
+      <view class='empty'>
+        <image src="{{nodataimg}}"></image>
+        <text>{{message}}</text>
+      </view>
+    </block>
+  </view>
+  <image src="/images/base/acc_page_goto_top_btn.png" class='gotop' wx:if="{{showgotop}}" bindtap='gotop'></image>
+</scroll-view>

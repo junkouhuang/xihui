@@ -1,0 +1,113 @@
+<!--sell.wxml-->
+<import src="../../components/confirm/confirm.wxml"/>
+<import src="../../toast/toast.wxml" />
+<template is="wxConfirm" data="{{isShowConfirm:isShowConfirm,tip:tip,placeholderName:placeholderName,type:type,value:value,method:method,bInput:bInput}}"></template>
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<scroll-view>
+  <view class='choose-goods'>
+    <block  wx:if="{{list.length==0}}">
+      <text class='choose-txt'>选择商品</text>
+      <navigator  url="../selllist/selllist" open-type="navigate">
+        <i class="iconfont icon-shizhong record"></i>
+      </navigator>
+    </block>
+    <block  wx:else>
+      <view class='editor'>
+        <view  wx:if="{{!del}}"  bindtap='editor' class='editing' hover-class="hoverclass">
+          <i class="iconfont icon-icon07"></i>
+          <text>编辑</text>
+        </view>
+        <view  wx:else  bindtap='editor'  class='editing' hover-class="hoverclass">
+          <text>完成</text>
+        </view>
+        <navigator url="../selllist/selllist" open-type="navigate">
+         <i class="iconfont icon-shizhong record" ></i>
+        </navigator>
+      </view>
+      <view class='goods'>
+        <view class='title'>
+          <text>商品</text>
+          <text>颜色</text>
+          <text>尺码</text>
+          <text>零售价</text>
+          <text>折后价</text>
+          <text>数量</text>
+          <text class='drop-arrow'></text>
+        </view>
+        <view class='item' wx:for="{{list}}"  wx:for-index="index" wx:key="index">
+          <view class='spmc'>{{item.spmc}}（{{item.unicode}}）</view>          
+            <view class='detail'>
+              <view class='del'>
+                <view wx:if="{{del}}" data-index="{{index}}" bindtap='del' hover-class="hoverclass">
+                  <i class="iconfont icon-shanchu" ></i>
+                </view>
+              </view>
+              <text>{{item.ys}}</text>
+              <text>{{item.cm}}</text>
+              <text>{{item.sellprice}}</text>
+              <text>{{item.zhprice}}</text>
+              <text>{{item.sl}}</text>
+              <view class='drop-arrow'  bindtap="arrowsdowm"  data-id="{{index}}" wx:if="{{cousedis!=index}}" hover-class="hoverclass">
+                <i class="iconfont icon-downarrow-blue"></i>
+              </view>
+              <view class='drop-arrow' bindtap="arrowsup"  hover-class="hoverclass" wx:else>
+               <i class="iconfont icon-uparrow-blue"></i>
+              </view>
+            </view>
+            <view class='discount' wx:if="{{cousedis==index}}">
+              <view class='top'>
+                <text>商品折扣</text>
+                <text>会员折扣</text>
+                <text>门店折扣</text>
+                <text>折前金额</text>
+                <text>折后金额</text>
+              </view>
+              <view class='bottom'>
+                <input type='number' value='{{item.sellrate * 100 }}%' disabled></input>
+                <input type='number' value='{{item.viprate * 100 }}%' disabled></input>
+                <view>
+                  <input type='number' value='{{item.mdrate!=""? item.mdrate* 100:"" }}' bindinput='updStroeRate' bindblur='updStroeRateblur' data-index="{{index}}" placeholder='' maxlength='3'></input>
+                  <text>%</text>
+                </view>
+                <input type='number' value='{{item.zqamount}}' disabled></input>
+                <input type='number' value='{{item.zhamount}}' disabled></input>
+              </view>
+            </view>  
+        </view>
+      </view>
+    </block>
+    <view class='choose-ico'>
+      <view  hover-class="hoverclass"> <i class="iconfont icon-saoma" bindtap='openqrcode'></i></view>
+      <view  hover-class="hoverclass"><i class="iconfont icon-jiahao" bindtap='splist' hover-class="hoverclass"></i></view>
+    </view>
+  </view>
+  <view class='showmodel' wx:if="{{list.length!=0}}">
+    <view class='zkml'>
+      <text class='wholediscount' bindtap='wholediscount'>整单折扣</text>
+      <text class='discounts' bindtap='showmoling'>-抹零</text>
+    </view>
+    <!--<view class='settle'>
+      <text class='settle-txt'>结算方式：</text>
+      <text>扫码支付</text>
+    </view>-->
+  </view>
+  <view class='remark'>
+   <view class='mobile'>
+    <text>手机：</text>
+    <input type='number' maxlength='11' bindinput='inputtel' value="{{tel}}" bindblur='blurtel' bindfocus='focustel'></input>
+   </view>
+   <!--<view class='bz'>
+    <text class='bz-txt'>备注：</text>
+    <textarea maxlength='60' placeholder='' cursor-spacing="100"  placeholder-style="color:#999;" wx:if="{{isShowTextarea}}" bindblur='blurTextarea' bindinput='inputTextarea' value="{{remark}}" focus="{{onFacus}}">
+    </textarea>
+    <view bindtap='onShowTextarea' wx:else>
+    {{remark}}
+    </view>
+   </view>-->
+  </view>
+  <view class='addsell'>
+    <view class='heji'>合计：<text class='total'>{{total}}</text><text class='totalPrice'>￥{{totalPrice}}</text></view>
+    <view class="addsell-btn" bindtap='addsell' wx:if="{{list.length!=0}}"  loading="{{loading}}">出售</view>
+    <view class="addsell-btn-null"  wx:else>出售</view>
+  </view>
+</scroll-view>

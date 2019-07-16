@@ -1,0 +1,195 @@
+page{
+  background: #F5f5f5;
+}
+.item{
+  background-color: #fff;
+  padding:30rpx;
+  margin: 20rpx;
+  display:flex;
+  align-items: center;
+  border-radius: 20rpx;
+  position: relative;
+}
+navigator{
+ display: flex;
+ align-items: center;
+}
+.left{
+  display: flex;
+  flex-direction: column;
+}
+.left .dh text:first-child{
+    background-color: #f04d52;
+    color: #fff;
+    margin-right: 20rpx;
+    font-size: 26rpx;
+    padding: 4rpx 10rpx;
+}
+.left .dh text:last-child{
+    font-weight: bold
+}
+.amount{
+  color: #999;
+  margin-top: 20rpx;
+}
+.price{
+  color: #999;
+  margin-top: 10rpx;
+}
+.time{
+  color: #999;
+  margin-top: 10rpx;
+}
+.finsh{
+  color: #30CD24;
+  position: absolute;
+  top: 100rpx;
+  right: 20rpx;
+}
+.wait{
+  color: #0199FC;
+  position: absolute;
+  top: 100rpx;
+  right: 20rpx;
+}
+.send{
+  color: #FFC900;
+  position: absolute;
+  top: 100rpx;
+  right: 20rpx;
+}
+.item  i{
+  font-size: 30px;
+  position: absolute;
+  right: 50rpx;
+}
+.empty{
+  display: flex;
+  flex-direction: column;
+  padding:100rpx;
+}
+.empty image{
+  width:400rpx;
+  height:200rpx;
+  margin:auto;
+}
+.empty text{
+  margin: auto;
+  color: #C1C1C1;
+  padding: 20rpx;
+}
+.add{
+  width: 120rpx;
+  height: 120rpx;
+  position:fixed;
+  bottom: 100rpx;
+  right: 40rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+.add .add-icon{
+  font-size: 80rpx;
+}
+.add .add-text{
+  position: absolute;
+  bottom: 10rpx;
+  width: 120rpx;
+  font-size: 26rpx;
+}
+.fixed{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(17, 17, 17, 0.7);
+  z-index: 1;
+}
+.returnorder{
+  position: fixed;
+  top: 50%;
+  margin-top: -380rpx;
+  left: 50%;
+  margin-left:-300rpx;
+  z-index:2;
+  width: 600rpx;
+  height: 760rpx;
+}
+.dialog_close{
+  width: 600rpx;
+  height: 160rpx;
+  text-align:center;
+}
+.dialog_close image{
+  width: 64rpx;
+  height: 168rpx;
+}
+.eturn{
+  width: 600rpx;
+  height: 600rpx;
+  background-color: #fff;
+  position: absolute;
+  border-radius: 30rpx;
+}
+.eturn .bz{
+  margin:30rpx;
+  display:flex;
+  flex-direction:column;
+}
+.eturn .contents{
+  padding: 30rpx;
+}
+.order {
+  display: flex;
+  margin:30rpx;
+}
+.bz{
+  display: flex;
+}
+.bz text{
+  width:20%;
+}
+.bz textarea{
+  width:440rpx;
+  margin-top:20rpx;
+  padding:20rpx;
+  height:200rpx;
+  border:2rpx solid#F4F4F4;
+  overflow:hidden;
+  word-wrap:break-word;
+  border-radius:20rpx;
+}
+.bz view{
+  width:440rpx;
+  margin-top:20rpx;
+  padding:20rpx;
+  height:200rpx;
+  border:2rpx solid#F4F4F4;
+  overflow:hidden;
+  word-wrap:break-word;
+  border-radius:20rpx;
+}
+.confirmbtn{
+  width: 100%;
+  text-align:center;
+  margin-top:30rpx;
+}
+.confirmbtn view{
+  position:absolute;
+  text-align:center;
+  width:93%;
+  color:#fff;
+  font-size:40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  z-index: 1;
+}
+.confirmbtn image{
+  width:500rpx;
+  height:80rpx;
+}

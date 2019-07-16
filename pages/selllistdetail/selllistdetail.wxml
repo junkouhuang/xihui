@@ -1,0 +1,57 @@
+<!--selllistdetail.wxml-->
+<view>
+  <view class='headline'>品质生活馆</view>
+  <view class='top'>
+    <view>
+      <text>门店：{{mdmc}}({{mdcode}})</text>
+    </view>
+    <view>
+      <text>收银员：{{username}}</text>
+    </view>
+    <view>
+      <text>单号：{{ordercode}}</text>
+    </view>
+    <view>
+      <text>业务时间：{{createtime}}</text>
+    </view>
+  </view>
+  <view class='goods'>
+    <view class='title'>
+      <text>商品</text>
+      <text>颜色</text>
+      <text>尺码</text>
+      <text>零售价</text>
+      <text>折后价</text>
+      <text>数量</text>
+      <text>金额</text>
+    </view>
+    <view class='item' wx:for="{{list}}"  wx:for-index="index" wx:key="index">
+      <view class='spmc'>
+        <text>{{item.spmc}}（{{item.unicode}}）</text>
+        <i class="iconfont icon-bi amend"></i>
+      </view>
+      <view class='detail'>
+        <text class='del'>
+        </text>
+        <text>{{item.ys}}</text>
+        <text>{{item.cm}}</text>
+        <text>{{item.sellprice}}</text>
+        <text>{{item.realprice}}</text>
+        <text>{{item.sl}}</text>
+        <text>{{item.realprice * item.sl}}</text>
+      </view>
+    </view>
+    <view class='total'>
+      <text>合计：</text>
+      <text>{{sl}}</text>
+      <text>￥{{zje}}</text>
+    </view>
+    <view class='printtime' wx:if="{{sign==0}}">
+      <text>打印时间：{{printtime}}</text>
+    </view>
+  </view>
+  <view class='print' wx:if="{{sign==0}}">
+    <button class='print-btn' bindtap="print" wx:if="{{show}}">直接打印</button> 
+    <button class='bluetooth' bindtap="bluetooth">选择打印机</button> 
+  </view>
+</view>

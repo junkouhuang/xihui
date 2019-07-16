@@ -1,0 +1,124 @@
+page{
+  background-color: #ebeff2;
+}
+.search {
+	width: 100%;
+	height: 130rpx;
+	position: fixed;
+	top: 0;
+	background-color: #fff;
+  border-bottom: 2rpx solid #f5f5f5;
+}
+.group {
+	display: flex;
+	align-items: center;
+  padding: 26rpx;
+}
+.group navigator {
+	flex: 1;
+}
+.group navigator view {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.searchcion {
+	position: absolute;
+	left: 56rpx;
+}
+.search input {
+	background-color: #F0F4F5;
+	padding: 14rpx 76rpx;
+	border-radius: 50rpx;
+	margin: 0 20rpx;
+	flex: 1;
+}
+.container {
+  margin-top: 130rpx;
+  margin-bottom: 120rpx;
+}
+.item {
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1px solid #F4F4F4;
+  background-color:#fff;
+}
+.spimg{
+  width: 180rpx;
+  height: 180rpx;
+  border: 2rpx solid #f5f5f5;
+  border-radius: 10rpx;
+  background-position: center;
+  background-size: cover;
+}
+.noimg{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+}
+.item .content {
+  display: flex;
+  flex-direction: column;
+  padding:20rpx 0 0 30rpx ;
+}
+.spmc{
+  font-weight: bold;
+}
+.sellprice{
+  margin-top: 10rpx;
+}
+.qty{
+  margin-top: 10rpx;
+}
+.sellprice text{
+  color: #f04d52;
+}
+.totalStock{
+  display: flex;
+  padding:10rpx 30rpx;
+  text-align:center;
+  margin: auto;
+  align-items:center;
+}
+.getTotalPrice{
+  display: flex;
+  padding:10rpx 30rpx;
+  text-align:center;
+  margin: auto;
+}
+.empty{
+  display: flex;
+  flex-direction: column;
+  padding:100rpx;
+}
+.empty image{
+  width:400rpx;
+  height:200rpx;
+  margin:auto;
+}
+.empty text{
+  margin: auto;
+  color: #C1C1C1;
+  padding: 20rpx;
+}
+.stock{
+  display:flex;
+  background-color:#fff;
+  height:100rpx;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+}
+.totalStock text:nth-child(2){
+  color: #f04d52;
+}
+.getTotalPrice text:nth-child(2){
+  color: #f04d52;
+}
+.gotop{
+  position: fixed;
+  bottom: 100rpx;
+  right: 50rpx;
+  width: 140rpx;
+  height: 140rpx;
+}

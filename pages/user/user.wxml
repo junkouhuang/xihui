@@ -1,0 +1,44 @@
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<view>
+  <view class="userinfo">
+    <image src="/images/base/topic.png" class='topicbj'></image>
+    <image src='/images/user/pic.png' class='topic'></image>
+    <text>{{mdmc}}-{{mdcode}}</text>
+  </view>
+  <view class='content'>
+    <view class='cash'>
+      <view bindtap='case'>
+        <i class="iconfont icon-qianbao"></i>
+        <text>提现</text>
+      </view>
+      <i class="iconfont icon-you-copy"></i>
+    </view>
+    <view class='setting'>
+      <view bindtap='setting'>
+        <i class="iconfont icon-shezhi"></i>
+        <text>设置</text>
+      </view>
+      <i class="iconfont icon-you-copy"></i>
+    </view>
+  </view>
+  <view class='logout' bindtap='logout'>退出登录</view>
+  <!-- 密码输入框 -->
+  <view wx:if='{{isShowConfirm}}'>
+    <view class='bg_layer' bindtap='close'></view>
+    <view class='input_main'>
+      <view class='input_title'>
+        <text>输入终端操作密码</text>
+      </view>
+      <view class='input_tip'>
+        <text>使用提现界面之前需要验证身份，验证通过后才可进行提现。</text>
+      </view>
+      <view class='input_row' catchtap='getFocus'>
+        <view class='pwd_item' wx:for='{{6}}' wx:key="index" wx:for-index='i'>
+          <text wx:if='{{pwdVal.length>i}}' ></text>
+        </view>
+      </view>
+      <input class='input_control' password type='number' focus='{{payFocus}}' bindinput='inputPwd' maxlength='6' cursor-spacing='50' />
+    </view>
+  </view>
+</view>

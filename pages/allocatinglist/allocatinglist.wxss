@@ -1,0 +1,136 @@
+page{
+  background: #F5f5f5;
+}
+.item{
+  background-color: #fff;
+  margin: 20rpx;
+  display:flex;
+  align-items:center;
+  border-radius: 20rpx;
+}
+.item:active{
+  background-color:#ebeff2;
+  opacity:0.7;
+}
+.item .content{
+  padding:30rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.left{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.left .dh{
+  margin-bottom:10rpx;
+}
+.left .dh text:first-child{
+  background-color: #f04d52;
+  color: #fff;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  padding: 4rpx 10rpx;
+}
+.left .dh text:last-child{
+  font-weight: bold;
+}
+.left .arrows {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+}
+.left .arrows i{
+  font-size: 50rpx;
+}
+ .status{
+  position: absolute;
+  right: 30rpx;
+  top: 80rpx;
+  border-radius: 100%;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  text-align: center;
+}
+ .xj{
+  color: #fff;
+  background-color: #f04d52;
+}
+ .tj{
+   color: #fff;
+   background-color: #FFC900;
+}
+ .qr{
+   color: #fff;
+   background-color: #30CD24;
+}
+ .fh{
+  color: #fff;
+  background-color: #4dc2f0;
+}
+ .sh{
+    color: #fff;
+    background-color: #30CD24;
+}
+.createtime{
+  margin-top: 10rpx;
+  color: #999;
+}
+.right{
+  position: absolute;
+  right: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.right  i{
+  font-size: 30px;
+}
+.new{
+  color: #0199FC;
+}
+.submit{
+  color: #FFC900;
+}
+.confirm{
+  color: #0199FC;
+}
+.send{
+  color: #0199FC;
+}
+.finsh{
+  color: #30CD24;
+}
+.right text{
+  padding-top: 10rpx;
+  color: #666;
+}
+.add{
+  width: 120rpx;
+  height: 120rpx;
+  position:fixed;
+  bottom: 100rpx;
+  right: 40rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+.add .add-icon{
+  font-size: 80rpx;
+}
+.add .add-text{
+  position: absolute;
+  bottom: 10rpx;
+  width: 120rpx;
+  font-size: 26rpx;
+
+}

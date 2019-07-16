@@ -1,0 +1,72 @@
+/* pages/paysuccess/paysuccess.wxss */
+page{
+  background: #ebeff2;
+  width:100%;
+}
+.paysuccess{
+  margin: 30rpx;
+  position: relative;
+  height:100%;
+}
+.top{
+  width: 100%;
+  height: 30rpx;
+  border-radius: 20rpx;
+  background: -webkit-linear-gradient(top, #333, #000); 
+}
+.content{
+  background-color: #fff;
+  margin-left: 5%;
+  position: absolute;
+  top: 20rpx;
+  width: 90%;
+  height: 600rpx;
+}
+.c_tp{
+  display: flex;
+  padding:80rpx 100rpx;
+  align-items:center;
+}
+.c_tp i{
+  font-size: 40px;
+  color: #0199FC;
+}
+.c_tp text{
+  font-size: 40rpx;
+  margin-left:60rpx;
+}
+.c_tb{
+  margin:  0 60rpx;
+  display:flex;
+  flex-direction:column;
+}
+.c_tb text{
+  margin-top: 10rpx;
+}
+.money {
+  margin-top: 10rpx;
+}
+.money text{
+  letter-spacing:30rpx;
+}
+.time{
+  margin-top: 10rpx;
+}
+.time text{
+  letter-spacing:30rpx;
+}
+.c_btn{
+  display: flex;
+  margin-top:50rpx;
+}
+.c_btn button{
+  width: 200rpx;
+}
+.c_btn button:nth-child(1){
+  background-color:#fff;
+  color:#666;
+}
+.c_btn button:nth-child(2){
+  background-color:#34A4E6;
+  color:#fff;
+}

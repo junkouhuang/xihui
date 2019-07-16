@@ -1,0 +1,52 @@
+<!--allocatinglist.wxml-->
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<scroll-view class='navigation'>
+  <view class='navlist'>
+    <view class='{{status == 0?"active":""}}' bindtap='swichNav' data-index="0">调出</view>
+    <view class='{{status == 1?"active":""}}' bindtap='swichNav'  data-index="1">调入</view>
+  </view>
+</scroll-view>
+<swiper  style="height:{{winHeight-45}}px" bindchange="swiperChange" current="{{status}}">
+  <swiper-item  class='list'  wx:for="{{[0,1]}}" wx:key="index">
+    <block wx:if="{{index == status}}">
+      <block wx:if="{{list.length!=0}}">
+        <scroll-view scroll-y="true" class='scoll-h' bindscrolltolower='lower'>
+          <view class='item' wx:for="{{list}}" wx:key="index" bindtap='allocatinglistdetail' data-index="{{index}}">
+            <view class="content">
+              <view class='left'>
+                <view class='dh'>
+                  <text>单号</text>
+                  <text>{{item.ordercode}}</text>
+                </view>
+                <view class='arrows'>
+                  <text>{{item.fstorename}}（{{item.fstorecode}}）</text><i class="iconfont icon-zhixiang-"></i> <text>{{item.tstorename}}（{{item.tstorecode}}）</text>
+                </view>
+                <view  class='createtime'>
+                  <text>{{item.createtime}}</text>
+                </view>
+              </view>
+              <view class='status xj' wx:if="{{item.status == 0}}" >新建</view>
+              <view class='status tj' wx:if="{{item.status == 1}}">提交</view>
+              <view class='status qr' wx:if="{{item.status == 2}}">确认</view>
+              <view class='status fh' wx:if="{{item.status == 3}}">发货</view>
+              <view class='status sh' wx:if="{{item.status == 4}}">收货</view>
+            </view>
+          </view>
+          <view class='seenfoot'>{{seenfoottxt}}</view>
+        </scroll-view>
+      </block>
+      <block wx:else>
+        <view class='empty'>
+          <image src="{{nodataimg}}"></image>
+          <text>{{message}}</text>
+        </view>
+      </block>
+    </block>
+  </swiper-item >
+</swiper>
+<view class='add' bindtap='add' wx:if="{{status == 0}}" hover-class="hoverclass">
+  <text class='add-icon'>+</text>
+  <view class='add-text'>新增</view>
+</view>
+

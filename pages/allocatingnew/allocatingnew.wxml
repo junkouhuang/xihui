@@ -1,0 +1,62 @@
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<wxs src="../../wxs/tofixed.wxs" module="tools" />
+<scroll-view>
+  <view>
+    <view class='top'>
+      <view class='dh'>
+        <text>调货单号</text>
+        <text>{{ordercode}}</text>
+      </view>
+      <view class='tstorecode'>
+        <text>调入店号</text>
+        <input bindinput='gettstorecode' bindblur='gettstoremc'></input>
+      </view>
+      <view class='tstoremc' wx:if="{{tstoremc!=''}}">
+        <text>调入店名</text>
+        <text>{{tstoremc}}</text>
+      </view>
+      <view class='bz'>
+        <text>备注</text>
+        <textarea maxlength='70' placeholder='' cursor-spacing="100"  placeholder-style="color:#999;" bindinput='bz'></textarea>
+      </view>
+    </view>
+    <view class='content' wx:if="{{list.length>0}}">
+      <view class='mx'>
+        <text>调货单明细</text>
+      </view>
+      <view class='goods'>
+        <view class='title'>
+          <text>商品</text>
+          <text>款号</text>
+          <text>单价</text>
+          <text>调出数量</text>
+          <text>金额</text>
+        </view>
+        <view class='item' wx:for="{{list}}"  wx:for-index="index" wx:key="index">
+          <view class='spmc'>
+            <text>{{item.spmc}}（{{item.unicode}}）</text>
+          </view>
+          <view class='detail'>
+            <view class='del'>
+              <i class="iconfont icon-shanchu"   data-id="{{index}}" bindtap='del'></i>
+            </view>
+            <text>{{item.spcode}}</text>
+            <text>{{item.sellprice}}</text>
+            <input class='num {{index == idx?"act":""}}' disabled='{{index != idx}}' value='{{item.sl}}'  type='number' bindblur='inpsl' data-id="{{index}}"></input>
+            <text>{{tools.tofixed(item.sellprice * item.sl)}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='choose-ico'>
+     <i class="iconfont icon-saoma" bindtap='openqrcode'></i>
+     <i class="iconfont icon-jiahao" bindtap='splist'></i>
+    </view>
+  </view>
+  <view class='sale'>
+    <view class='price'>合计：<text class='dhsl'>{{dhsl}}</text><text class='dhje'>￥{{totalPrice}}</text></view>
+    <view class="sale-btn" bindtap='save' wx:if="{{list.length!=0}}">保存</view>
+    <view class="sale-btn-null"  wx:else>保存</view>
+  </view>
+</scroll-view>

@@ -1,0 +1,6 @@
+<view>
+  <view class='list' wx:for="{{list}}" wx:key="index">
+   <text>{{item.bankname}}({{item.cardtypelabel}})</text>
+   <text>{{item.bankcard}}</text>
+  </view>
+</view>

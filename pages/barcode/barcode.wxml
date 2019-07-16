@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container page">
+  <view class="panel">
+    <view class="barcode">
+      <view class='payico'>
+        <i class="iconfont icon-fukuan"></i>
+        <text>向商家付款</text>
+      </view>
+      <canvas canvas-id="barcode" />
+      <view class="barnum">{{code}}</view>
+    </view>
+    <view class="qrcode">
+      <canvas canvas-id="qrcode" />
+    </view>
+    <view class="needpay"><text>￥</text><text>{{needpay}}</text></view>
+  </view>
+</view>

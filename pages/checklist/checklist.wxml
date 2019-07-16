@@ -1,0 +1,34 @@
+<scroll-view>
+  <block wx:if="{{list.length>0}}">
+    <view class="item"  wx:for="{{list}}" bindtap='check' data-index="{{index}}"  wx:key="index">
+      <view class='dh'>
+        <text>单号</text><text>{{item.ordercode}}</text>
+      </view>
+      <view class='content'>
+        <text>{{item.mdmc}}（{{item.mdcode}}）- {{item.createuname}}</text>
+        <text>盘点数量：{{item.pdsl == null?0:item.pdsl}}</text>
+        <view class='pdamount'> 
+          盘点金额：<text>￥{{item.pdamount== null?0.00:item.pdamount}}</text>
+        </view>
+        <view class='creatime'>
+           创建时间：<text>{{item.createtime}}</text>
+        </view>
+      </view>
+      <!-- 0新建 1结果上传-->
+      <i class="iconfont icon-daipandian checked" wx:if="{{item.status==0 ||item.status==1 }}"></i>
+      <!-- 2结果确认 3更新库存-->
+      <i class="iconfont icon-dingdan_yiwancheng checking"  wx:if="{{item.status==2}}"></i>
+    </view>
+    <view wx:if="{{seenfoot}}" class='seenfoot'>已经见底啦~</view>
+  </block>
+  <block wx:else>
+    <view class='empty'>
+      <image src="{{nodataimg}}"></image>
+      <text>{{message}}</text>
+    </view>
+  </block>
+  <view class='addnew' bindtap='tocheck'>
+    <text class='addnew-icon'>+</text>
+    <view class='addnew-text'>新增</view>
+  </view>
+</scroll-view>

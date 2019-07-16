@@ -1,0 +1,60 @@
+.container{
+  margin-bottom: 100rpx;
+}
+.list {
+  padding:30rpx;
+  border-bottom:2rpx dashed #ebeff2;
+}
+.list-top text{
+  font-weight: bold;
+}
+.list-bottom{
+  display: flex;
+  align-items:center;
+}
+.list-left{
+  display: flex;
+  flex-direction: column;
+  width:70%;
+}
+.list-right{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.pd-btn{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  border-top: 2rpx solid #f5f5f5;
+}
+.pd-btn .gather{
+  width:30%;
+  height:100rpx;
+  background-color:#f04d52;
+  color:#fff;
+  text-align:center;
+  line-height:100rpx;
+  position:absolute;
+  right:0;
+  outline: 2rpx solid #f04d52;
+}
+.calculate{
+  font-size:24rpx;
+  width:70%;
+}
+.calculate view{
+  display: flex;
+  font-size: 26rpx;
+}
+.calculate view text:nth-child(1){
+  margin-left: 20rpx;
+  width: 50%;
+}
+.calculate view text:nth-child(2){
+  margin-left: 20rpx;
+  width: 50%;
+}

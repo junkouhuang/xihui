@@ -1,0 +1,43 @@
+<!--splist.wxml-->
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<wxs src="../../wxs/trim.wxs" module="tools" />
+<view>
+  <view class='search'>
+    <view class='group'>
+      <icon class="searchcion" size='16' type='search'></icon>
+      <input type='text' placeholder='{{selecttypetext}}' placeholder-style='color:#ccc;' confirm-type="search" bindinput='inputselectInfo' maxlength='20' bindconfirm="search" focus="{{focus}}"></input>
+     </view>
+     <view class='selecttype'>
+      <text>查询条件：</text>
+      <text bindtap='spcode' class='{{selecttype ==0?"act":""}}'>款号</text>
+      <text bindtap='mxcode'  class='{{selecttype ==1?"act":""}}'>条码</text>
+      <text bindtap='spmc'  class='{{selecttype ==2?"act":""}}'>品名</text>
+     </view>
+  </view>
+  <view class='goods'>
+    <block wx:if="{{list.length!=0}}">
+      <view class='item' wx:for="{{list}}" wx:for-index="index" wx:key="index" bindtap='spdetail' data-index="{{index}}">
+        <block wx:if="{{item.spimgpath!=null}}">
+          <view style="background-image:url({{tools.trim(item.spimgpath)}})" class="spimg"></view>
+        </block>
+        <block wx:else>
+          <image src="/images/base/detailpic_no.png"   class='noimg'/>
+        </block>
+        <view class='detail' bindtap='' data-id="{{index}}">
+          <text>{{item.spmc}}</text>
+          <text class='unicode'>款号:{{item.spcode}}</text>
+          <text class='sl'>库存:{{item.sl}}</text>
+        </view>
+      </view>
+      <view wx:if="{{seenfoot}}" class='seenfoot'>已经见底拉~</view>
+    </block>
+    <block wx:else>
+      <view class='empty'>
+        <image src="{{nodataimg}}"></image>
+        <text>{{message}}</text>
+      </view>
+    </block>
+  </view>
+  <image src="/images/base/acc_page_goto_top_btn.png" class='gotop' wx:if="{{showgotop}}" bindtap='gotop'></image>
+</view>

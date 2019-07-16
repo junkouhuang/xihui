@@ -1,0 +1,40 @@
+<scroll-view class='navigation' scroll-x="true" scroll-left="{{scrollLeft}}">
+  <view class='navlist'>
+    <view class=' {{status == 0?"active":""}}' bindtap='swichNav' data-index="0">全部</view>
+    <view class=' {{status == 1?"active":""}}' bindtap='swichNav'  data-index="1">待收货({{waitStoreInNum}})</view>
+    <view class=' {{status == 2?"active":""}}' bindtap='swichNav'  data-index="2">已收货</view>
+  </view>
+</scroll-view>
+<swiper  style="height:{{winHeight-45}}px" bindchange="swiperChange" current="{{status}}">
+  <swiper-item  class='list'  wx:for="{{[0,1,2]}}" wx:key="index">
+    <block wx:if="{{index == status}}">
+        <block wx:if="{{list.length!=0}}">
+          <scroll-view scroll-y="true" class='scoll-h' bindscrolltolower='lower'>
+            <view class='item' wx:for="{{list}}" bindtap='gotochildpage' wx:key="index" data-id="{{index}}">
+              <view class='content'>
+                <view class='left'>
+                <view class='dh'> 
+                  <text>单号</text>
+                  <text>{{item.ordercode}}</text>
+                </view>
+                <view class='amount'><text>数</text>量：{{item.fhsl}}件</view>
+                <view class='price'><text>金</text>额：￥{{item.totalamount}}</view>
+                <text class='time'>{{item.createtime}}</text>
+              </view>
+              <text class="wait"  wx:if="{{item.status == 3}}">待收货</text>
+              <text class="finshed" wx:if="{{item.status == 4}}">已收货</text>
+              </view>
+            </view>
+            <view class='seenfoot'>{{seenfoottxt}}</view>
+          </scroll-view >
+        </block>
+        <block wx:else>
+          <view class='empty'>
+            <image src="{{nodataimg}}"></image>
+            <text>{{message}}</text>
+          </view>
+        </block>
+      </block>
+  </swiper-item >
+</swiper>
+

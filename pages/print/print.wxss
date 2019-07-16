@@ -1,0 +1,96 @@
+page{
+  background-color: #ebeff2;
+}
+.page-section {
+  width: 100%;
+}
+
+.devices-summary {
+  width:100%;
+  padding: 30rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #EEE;
+}
+
+.device-list {
+  margin:30rpx;
+}
+.device-text{
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  color:#999;
+}
+.device-item {
+  border-bottom: 1rpx solid #EEE;
+  padding: 30rpx;
+  color: #666;
+  display: flex;
+  align-items: center;
+  position:relative;
+  background-color:#fff;
+}
+.device-item:first-child{
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+.device-item:last-child{
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+.bluetooth{
+  color: #0199FC;
+  position:absolute;
+  right:30rpx;
+}
+
+
+.btn-area {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 30rpx;
+  margin: 30rpx 0;
+}
+.btn-area button{
+    width:96%;
+    margin-left:2%;
+    margin-top:50rpx;
+    font-size:13pt;
+    line-height:85rpx;
+    height:85rpx;
+    background:#1B1A1F;
+    color:#BD973B;
+}
+.connected-area {
+  font-size: 22rpx;
+  bottom:40rpx;
+  position:absolute;
+}
+
+.connected-info text{
+  text-align: center;
+  font-size: 30rpx
+}
+.input-area {
+  background: #fff;
+  margin-top: 10rpx;
+  width: 100%;
+}
+
+.input {
+  font-size: 28rpx;
+  height: 2.58823529em;
+  min-height: 2.58823529em;
+  line-height: 2.58823529em;
+  padding: 10rpx;
+}
+.refresh {
+  position: fixed;
+  bottom: 50rpx;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.refresh  span{
+  font-size: 36rpx;
+  color: #0199FC;
+}

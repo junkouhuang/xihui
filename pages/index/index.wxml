@@ -1,0 +1,82 @@
+<import src="../../toast/toast.wxml" />
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<view>
+  <view class='search'>
+    <view class='group'>
+      <navigator  url="../search/search?type=1" open-type="navigate" hover-class="none">
+       <view>
+        <icon class="searchcion" size='16' type='search'></icon>
+        <input type='text' placeholder='款号/条码/品名' placeholder-style='color:#ccc;' disabled ></input>
+       </view>
+      </navigator>
+      <view class='qrcode'  hover-class="hoverclass">
+        <i class="iconfont icon-saoma" bindtap='openqrcode'></i>
+        <text>扫一扫</text>
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='nav'>
+      <view class='item'>
+        <navigator url="../sell/sell" open-type="navigate" >
+          <!--<image  src="/images/index/sale.png" class='sale'></image>-->
+          <i class="iconfont icon-shangpinshouyin"></i>
+          <text>前台收银</text>
+        </navigator>
+      </view>
+      <view class='item'>
+        <navigator url="../sellreturn/sellreturn" open-type="navigate">
+          <!--<image  src="/images/index/customersalesreturn.png" class='customersalesreturn'></image>-->
+          <i class="iconfont icon-ziyuan th"></i>
+          <text>收银退货</text>
+        </navigator>
+      </view>
+      <view class='item'>
+        <navigator url="../allocatinglist/allocatinglist" open-type="navigate">
+          <!--<image  src="/images/index/allocating.png" class='allocating'></image>-->
+          <i class="iconfont icon-tiaohuan dh"></i>
+          <text>调货</text>
+        </navigator>
+      </view>
+    </view>
+    <view class='nav'>  
+     <view class='item'>
+        <navigator url="../fhlist/fhlist" open-type="navigate">
+          <!--<image  src="/images/index/sign.png" class='sign'></image>-->
+          <i class="iconfont icon--box-check-circle sh"></i>
+          <text>收货</text>
+        </navigator>
+      </view>
+      <view class='item'>
+        <navigator url="../storereturnlist/storereturnlist" open-type="navigate">
+          <!--<image  src="/images/index/storesalesreturn.png" class='out'></image>-->
+          <i class="iconfont icon-chukuqueren ck"></i>
+          <text>退货出库</text>
+        </navigator>
+      </view>
+      <view class='item'>
+        <navigator url="../sellport/sellport" open-type="navigate">
+          <!--<image  src="/images/index/sell.png" class='sign'></image>-->
+          <i class="iconfont icon-baobiao"></i>
+          <text>销售报表</text>
+        </navigator>
+      </view>
+    </view>
+    <view class='nav'>
+      <view class='item'>
+        <navigator url="../checklist/checklist" open-type="navigate">
+          <!--<image  src="/images/index/check.png" class='check'></image>-->
+          <i class="iconfont icon-cangkupandian pd"></i>
+          <text>盘点</text>
+        </navigator>
+      </view>
+      <view class='item'>
+        <navigator url="../storestock/storestock" open-type="navigate">
+          <!--<image  src="/images/index/outlist.png" class='check'></image>-->
+          <i class="iconfont icon-chaxun cx"></i>
+          <text>本店库存查询</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
